@@ -15,7 +15,8 @@ class ClientSerializer(serializers.ModelSerializer):
 class WorkerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Worker
-        fields = ['id', 'full_name', 'phone', 'email', 'to_book', 'user']
+        fields = ['id', 'full_name', 'phone', 'email', 'to_book',
+                  'status', 'user']
 
 
 class RegisterSerializer(serializers.ModelSerializer):
