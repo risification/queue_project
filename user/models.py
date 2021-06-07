@@ -14,5 +14,9 @@ class Client(models.Model):
 class Worker(models.Model):
     full_name = models.CharField(max_length=50)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    status = models.CharField(choices=(
+        ('active', 'active'),
+        ('working', 'working'),
+        ("don't working", "don't working")
+    ), max_length=20)
     phone = models.IntegerField()
-    to_book = models.ForeignKey(Client, on_delete=models.CASCADE)
